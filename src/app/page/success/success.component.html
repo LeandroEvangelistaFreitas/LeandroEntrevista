@@ -1,0 +1,64 @@
+<div class="bg-primary-ligth">
+    <div class="container-lg bg-primary-dark px-5 w-100 text-center">
+        <div class="row px-lg-5 py-0 mb-4 b-primary
+px-lg-4">
+            <div class="col p-lg-5">
+                <app-title size='xl' weight="xl" text='Parabéns!'></app-title>
+                <app-text-default padding="px-5 pb-4" size='xl' weight='lg'
+                    text='O empréstimo foi realizado com sucesso!'>
+                </app-text-default>
+                <app-text-default padding="px-5 pb-4" size='xl' weight='lg' text='Veja abaixo o que você contratou:'>
+                </app-text-default>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white">
+        <div class="container-lg bg-primary-ligth px-5 w-100 text-center">
+            <div class="row p-4">
+
+                <div class="col-12  d-flex justify-content-center">
+                    <div class="col-6 py-4">
+                        <div class="col d-flex justify-content-between">
+                            <app-text-default size='lg' padding='' weight='lg' text='Valor solicitado:'>
+                            </app-text-default>
+                            <p class="mb-0 font-lg font-weight-lg">
+                                {{ calcJuros.valor | currency:'BRL' }}
+                            </p>
+                        </div>
+                        <div class="col d-flex justify-content-between">
+                            <app-text-default size='lg' padding='' weight='lg' text='Valor das parcelas:'>
+                            </app-text-default>
+                            <p class="mb-0 font-lg font-weight-lg">
+                                {{ calcJuros.valorParcelas | currency:'BRL' }}
+                            </p>
+                        </div>
+                        <div class="col d-flex justify-content-between">
+                            <app-text-default size='lg' padding='' weight='lg' text='Número de parcelas:'>
+                            </app-text-default>
+                            <app-text-default size='lg' padding='' weight='lg' text="{{calcJuros.parcelas}}">
+                            </app-text-default>
+                        </div>
+                        <div class="col d-flex justify-content-between">
+                            <app-text-default size='lg' padding='' weight='lg' text='Juros:'>
+                            </app-text-default>
+                            <app-text-default size='lg' padding='' weight='lg' text="{{juros}}%">
+                            </app-text-default>
+                        </div>
+                        <div class="col d-flex justify-content-between">
+                            <app-text-default size='lg' padding='' weight='lg' text='Total com juros:'>
+                            </app-text-default>
+                            <p class="mb-0 font-lg font-weight-lg">
+                                {{ calcJuros.valorTotal | currency:'BRL' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-lg bg-white px-5 w-100 text-center">
+            <div class="col-12 ">
+                <button mat-raised-button matSuffixy class="col-6 btn btn-primary py-1 my-4 ">Nova simulação</button>
+            </div>
+        </div>
+    </div>
+</div>

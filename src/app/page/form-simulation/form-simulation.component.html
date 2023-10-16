@@ -1,0 +1,93 @@
+<div class="container-lg bg-primary-dark px-5 w-100 text-center">
+    <div class="row px-lg-5 py-0 mb-4 b-primary
+px-lg-4">
+        <div class="col p-lg-5">
+            <app-title size='xl' weight="xl" text='Solicite já o seu empréstimo!'></app-title>
+            <div class="py-lg-4 mx-lg-3 px-lg-5 card bg-primary-opacity rounded-xl">
+                <app-text-default size='lg' weight='lg'
+                    text='Defina o valor, número de parcelas e dia de  vencimento desejado:'>
+                </app-text-default>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4 px-lg-5 px-lg-4">
+    <div class="row p-4 rounded-xl bg-white text-center">
+
+        <div class="col-12 pl-0 d-flex flex-custom">
+            <div class="col-6 border-right">
+                <mat-form-field class="col-12">
+                    <mat-label></mat-label>
+                    <app-title class="text-center" size='md' text='De qual valor você precisa?'></app-title>
+                    <input matInput currencyMask [(ngModel)]="valor"
+                        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                </mat-form-field>
+                <div class="col-12">
+                    <app-title size='md' text='Em quantas vezes deseja parcelar?'></app-title>
+                    <div class="col-12 pb-3 d-flex justify-content-between">
+                        <div (click)="selectBtn(6)" class="col d-flex justify-content-center">
+                            <button mat-raised-button matSuffix [value]="6"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded {{selectedBtnClass(6)}}"
+                                [disabled]="!!verMais">6</button>
+                        </div>
+                        <div (click)="selectBtn(10)" class="col d-flex justify-content-center">
+                            <button mat-raised-button matSuffix [value]="10"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded {{selectedBtnClass(10)}}"
+                                [disabled]="!!verMais">10</button>
+                        </div>
+                        <div (click)="selectBtn(12)" class="col d-flex justify-content-center">
+                            <button mat-raised-button [ngClass]="selectedBtnClass(12)" matSuffixy [value]="12"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded"
+                                [disabled]="!!verMais">12</button>
+                        </div>
+                        <div (click)="selectBtn(18)" class="col d-flex justify-content-center">
+                            <button [ngClass]="selectedBtnClass(18)" mat-raised-button matSuffixy [value]="18"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded"
+                                [disabled]="!!verMais">18</button>
+                        </div>
+                    </div>
+                    <button mat-raised-button matSuffixy (click)="verMais=!verMais"
+                        class="col-12 btn btn-primary py-1 my-2 ">
+                        {{!verMais?'Ver mais opções':'Ocultar opções'}}
+                    </button>
+                    <mat-form-field class="col-12" *ngIf="!!verMais">
+                        <mat-label>Digite a quantidade de parcelas desejada:</mat-label>
+                        <input matInput type="text" [(ngModel)]="parcelasInput">
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="col-12">
+                    <app-title size='md' text='Qual o melhor dia para o vencimento?'></app-title>
+                    <div class="col-12 pb-3 d-flex justify-content-between">
+                        <div class="col d-flex justify-content-center" (click)="vencimentoBtn(5)">
+                            <button mat-raised-button matSuffix [value]="5"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded {{vencimentoBtnClass(5)}}">5</button>
+                        </div>
+                        <div class="col d-flex justify-content-center" (click)="vencimentoBtn(10)">
+                            <button mat-raised-button matSuffix [value]="10"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded {{vencimentoBtnClass(10)}}">10</button>
+                        </div>
+                        <div class="col d-flex justify-content-center" (click)="vencimentoBtn(15)">
+                            <button mat-raised-button [ngClass]="vencimentoBtnClass(15)" matSuffixy [value]="15"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded">15</button>
+                        </div>
+                        <div class="col d-flex justify-content-center" (click)="vencimentoBtn(20)">
+                            <button [ngClass]="vencimentoBtnClass(20)" mat-raised-button matSuffixy [value]="20"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded">20</button>
+                        </div>
+                        <div class="col d-flex justify-content-center" (click)="vencimentoBtn(25)">
+                            <button [ngClass]="vencimentoBtnClass(25)" mat-raised-button matSuffixy [value]="25"
+                                class="col-1 font-xl font-weight-xl btn btn-outline-primary-rounded">25</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button [disabled]="disabledBtn()" mat-raised-button matSuffixy
+                    class="col-12 btn btn-primary py-1 my-4 " (click)="simularBtn()">Simular</button>
+            </div>
+        </div>
+    </div>
+</div>

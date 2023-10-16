@@ -1,0 +1,291 @@
+@import "./variables.scss";
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+@media (max-width: 768px) {
+    body {
+        background: $primary;
+    }
+
+    .container-lg {
+        color: $text-white;
+        border-radius: 60px;
+    }
+
+    .font {
+        &-xs {
+            font-size: $font-size-xs !important;
+        }
+        &-sm {
+            font-size: $font-size-sm !important;
+        }
+        &-md {
+            font-size: $font-size-md !important;
+        }
+        &-lg {
+            font-size: $font-size-md !important;
+        }
+        &-xl {
+            font-size: $font-size-lg !important;
+        }
+        &-xxl {
+            font-size: $font-size-lg !important;
+        }
+        &-xxxl {
+            font-size: $font-size-lg !important;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        background: $primary-ligth;
+    }
+
+    .container-lg {
+        color: $text-white;
+        height: auto;
+        border-radius: 0 0 60px 60px;
+    }
+
+    .w-100 {
+        max-width: 100%;
+    }
+}
+.bg {
+    &-primary-dark {
+        background: $primary-dark;
+    }
+    &-primary {
+        background: $primary;
+    }
+    &-primary-ligth {
+        background: $primary-ligth;
+    }
+    &-primary-ligthest {
+        background: $primary-ligthest;
+    }
+    &-primary-opacity {
+        background: $primary-opacity;
+    }
+    &-white {
+        background: $white;
+    }
+}
+
+.font {
+    &-xs {
+        font-size: $font-size-xs;
+    }
+    &-sm {
+        font-size: $font-size-sm;
+    }
+    &-md {
+        font-size: $font-size-md;
+    }
+    &-lg {
+        font-size: $font-size-lg;
+    }
+    &-xl {
+        font-size: $font-size-xl;
+    }
+    &-xxl {
+        font-size: $font-size-xxl;
+    }
+    &-xxxl {
+        font-size: $font-size-xxxl;
+    }
+    &-xs {
+        font-size: $font-size-xs;
+    }
+    &-title-sm {
+        font-size: $font-size-title-sm;
+    }
+    &-title-md {
+        font-size: $font-size-title-md;
+    }
+    &-title-lg {
+        font-size: $font-size-title-lg;
+    }
+    &-title-xl {
+        font-size: $font-size-title-xl;
+    }
+    &-title-xxl {
+        font-size: $font-size-title-xxl;
+    }
+    &-title-xxxl {
+        font-size: $font-size-title-xxxl;
+    }
+
+    &-icon-sm {
+        font-size: $font-size-icon-sm;
+    }
+    &-icon-md {
+        font-size: $font-size-icon-md;
+    }
+    &-icon-lg {
+        font-size: $font-size-icon-lg;
+    }
+    &-icon-xl {
+        font-size: $font-size-icon-xl;
+    }
+    &-icon-xxl {
+        font-size: $font-size-icon-xxl;
+    }
+    &-icon-xxxl {
+        font-size: $font-size-icon-xxxl;
+    }
+
+    &-weight {
+        &-xs {
+            font-weight: 100;
+        }
+        &-sm {
+            font-weight: 200;
+        }
+        &-md {
+            font-weight: 400;
+        }
+        &-lg {
+            font-weight: 600;
+        }
+        &-xl {
+            font-weight: 700;
+        }
+        &-xxl {
+            font-weight: 800;
+        }
+        &-xxxl {
+            font-weight: 900;
+        }
+    }
+}
+
+.color {
+    &-white {
+        color: $text-white;
+    }
+    &-black {
+        color: $text-black;
+    }
+    &-gray {
+        color: $text-gray;
+    }
+    &-red {
+        color: $red;
+    }
+    &-green {
+        color: $green;
+    }
+}
+
+.rounded {
+    &-xs {
+        border-radius: $radius-xs;
+    }
+    &-sm {
+        border-radius: $radius-sm;
+    }
+    &-md {
+        border-radius: $radius-md;
+    }
+    &-lg {
+        border-radius: $radius-lg;
+    }
+    &-xl {
+        border-radius: $radius-xl;
+    }
+    &-xxl {
+        border-radius: $radius-xxl;
+    }
+    &-xxxl {
+        border-radius: $radius-xxxl;
+    }
+}
+
+.btn {
+    &-return {
+        position: absolute;
+        color: white;
+        font-weight: 700;
+        border: 1px solid black;
+        border-radius: 8rem !important;
+        border: 3px solid #000000 !important;
+        padding: 0.3rem !important;
+        width: 65px !important;
+        margin-left: 1rem;
+        height: 65px !important;
+    }
+    &-primary {
+        background: $primary-dark !important;
+        border-radius: $radius-md !important;
+        &:disabled {
+            color: $white !important;
+            opacity: 0.5;
+            background: $primary-dark !important;
+            &:hover {
+                color: $white !important;
+                opacity: 0.5;
+                background: $primary-dark !important;
+            }
+        }
+        &:hover {
+            background: $primary-ligth !important;
+            color: $primary-dark !important;
+        }
+    }
+    &-outline-primary {
+        background: $white !important;
+        border-radius: $radius-md !important;
+        border: 2px solid $primary-dark !important;
+        &:hover {
+            background: $primary-ligth !important;
+        }
+        &-rounded {
+            background: $white !important;
+            border-radius: 8rem !important;
+            border: 3px solid $black !important;
+            padding: 0.7rem !important;
+            &:hover,
+            &.selected {
+                border: 3px solid $primary-dark !important;
+            }
+        }
+    }
+    &-voltar {
+        color: $white;
+        padding: 1rem;
+        position: absolute;
+        min-width: 100px;
+        min-height: 60px;
+      
+    }
+}
+
+.flex-custom {
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.d-initial {
+    display: initial !important;
+}
+
+.mat-input-element {
+    font-size: $font-size-lg !important;
+}
+
+.icon-btn {
+    cursor: pointer;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.margin-negativa {
+    margin-top: -40px;
+    min-height: 80px;
+}

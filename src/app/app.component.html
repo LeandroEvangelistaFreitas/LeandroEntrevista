@@ -1,0 +1,15 @@
+<div>
+  <div *ngIf="page !==1" (click)="voltar()" class="btn-voltar d-flex align-items-center">
+    <mat-icon class="material-symbols-outlined w-auto h-auto">arrow_circle_left</mat-icon>
+    <span class="pl-2">Voltar</span>
+  </div>
+  <app-form-initial [name]="initData[0]?.name" [cpf]="initData[0]?.cpf" [birthday]="initData[0]?.birthday"
+    (continue)="setNextPage($event)" *ngIf="page ===1"></app-form-initial>
+  <app-form-simulation [valor]='initData[1]?.valor' [parcelas]='initData[1]?.parcelas'
+    [vencimento]='initData[1]?.vencimento' [verMais]='initData[1]?.verMais' [parcelasInput]='initData[1]?.parcelasInput'
+    (simular)="setNextPage($event)" *ngIf="page ===2"></app-form-simulation>
+  <app-offer *ngIf="
+    page===3" (confirme)="setNextPage($event)" (cancel)='voltar()'></app-offer>
+  <app-success *ngIf="
+    page===4"></app-success>
+</div>
